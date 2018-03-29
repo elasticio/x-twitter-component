@@ -23,7 +23,7 @@
                 "label": "Access token secret",
                 "required": true,
                 "viewClass": "TextFieldView"
-            },
+            }
         }
     },
     "actions": {
