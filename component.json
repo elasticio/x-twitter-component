@@ -1,0 +1,39 @@
+{
+    "title": "Twitter",
+    "description": "elastic.io component for the Twitter API",
+    "docsUrl": "https://github.com/elasticio/google-translate-component",
+    "credentials": {
+        "fields": {
+            "consumer_key": {
+                "label": "Consumer key",
+                "required": true,
+                "viewClass": "TextFieldView"
+            },
+            "consumer_secret": {
+                "label": "Consumer secret",
+                "required": true,
+                "viewClass": "TextFieldView"
+            },
+            "access_token_key": {
+                "label": "Access token key",
+                "required": true,
+                "viewClass": "TextFieldView"
+            },
+            "access_token_secret": {
+                "label": "Access token secret",
+                "required": true,
+                "viewClass": "TextFieldView"
+            },
+        }
+    },
+    "actions": {
+        "postTweet": {
+            "main": "./lib/actions/postTweet.js",
+            "title": "Post tweet",
+            "metadata": {
+                "in": "./lib/schemas/postTweet.in.json",
+                "out": "./lib/schemas/postTweet.out.json"
+            }
+        }
+    }
+}

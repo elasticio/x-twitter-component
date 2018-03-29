@@ -1,0 +1,14 @@
+{
+   "type": "object",
+   "properties": {
+       "createdAt": {
+           "type": "string"
+       },
+       "id": {
+           "type": "string"
+       },
+       "text": {
+           "type": "string"
+       }
+   }
+}
