@@ -1,0 +1,25 @@
+{
+   "type": "object",
+   "properties": {
+       "tweets": {
+           "type": "array",
+           "items": {
+               "type": "object",
+               "properties": {
+                   "id": {
+                       "type": "string"
+                   },
+                   "createdAt": {
+                       "type": "string"
+                   },
+                   "text": {
+                       "type": "string"
+                   },
+                   "lang": {
+                       "type": "string"
+                   }
+               }
+           }
+       }
+   }
+}
