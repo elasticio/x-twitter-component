@@ -9,6 +9,9 @@
                    "id": {
                        "type": "string"
                    },
+                   "userId": {
+                       "type": "string"
+                   },
                    "createdAt": {
                        "type": "string"
                    },

@@ -1,92 +1,63 @@
-# google-translate-component
+# twitter-component
 
 ### Description
-Google translate component for the elastic.io platform.
+Twitter component for the elastic.io platform.
 
 ### Credentials
-In oprder to authenticate, you need to receive `apiKey` from your `Google cloud platform` account
+ - Consumer key
+ - Consumer secret
+ - Access token key
+ - Access token secret
 
-### Actions information
-When specifying the language in a `Configure input` section, use two or three letter codes for that. For example,
+### Actions
 
-    english -> en
-    russian -> ru
-    franch -> fr
-    -----
-    english -> eng
-    russian -> rus
-    franch -> fra
-
-Such codes can be foud in a result of `Retrieve supported languages` action execution
-#### Translate phrase
-`sourceLang` field is optional. Google will autodetect the source locale if not specified.
-
-in/out metadata can be found at `/lib/schemas/translatePhrase.{in/out}.json`
-#### Detect language
-in/out metadata can be found at `/lib/schemas/detectLanguage.{in/out}.json`
-#### Retrieve supported languages
-out metadata can be found at `/lib/schemas/retrieveSupportedLanguages.out.json`
-#### Translate object properties
-in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
+#### Post tweet
+in/out metadata can be found at `/lib/schemas/postTweet.{in/out}.json`
 
 ##### usage example
 input message:
 ```
 {
-    "sourceObject": {
-        "hello": "hello world",
-        "capital": "London is the capital of Great Britain"
-    },
-    "sourceLang": "en",
-    "targetLang": "de"
+    "text": "hi there"
 }
 ```
 output message:
 ```
 {
-    "hello": "Hallo Welt",
-    "capital": "London ist die Hauptstadt von Großbritannien"
+    "text": "hi there",
+    "id": "979656103867887616",
+    "createdAt": "Fri Mar 30 09:46:30 +0000 2018"
 }
 ```
-#### Translate array of objects
-in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
+#### Search tweets
+in/out metadata can be found at `/lib/schemas/searchTweets.{in/out}.json`
 
 ##### usage example
 input message:
 ```
 {
-	"sourceArray": [
+    "text": "hi there",
+    "count": 2
+}
+```
+output message:
+```
+{
+	"tweets": [
 		{
-            "hello": "hello world",
-            "capital": "London is the capital of Great Britain"
+            "id": "979656598619607040",
+            "userId": "123123",
+            "createdAt": "Fri Mar 30 09:48:28 +0000 2018",
+            "text": "@user123123 Hi there. If you would like to provide feedback about our packaging, please follow this link:…",
+			"lang": "en"
 		},
 		{
-			"color": "red",
-			"mood": "great mood"
+            "id": "979656548753592320",
+            "userId": "456456",
+            "createdAt": "Fri Mar 30 09:48:17 +0000 2018",
+            "text": "@user456456 Hi there, what sort of information can I help you with? Are you looking at train times for today?",
+			"lang": "en",
 		}
-	],
-	"sourceLang": "en",
-	"targetLang": "de"
+	]
 }
 ```
-output message:
-```
-{
-    "translatedArray": [
-    	{
-    		"capital": "London ist die Hauptstadt von Großbritannien",
-    		"hello": "Hallo Welt"
-    	},
-    	{
-    		"mood": "großartige Stimmung",
-    		"color": "rot"
-    	}
-    ]
-}
-```
-
-### Links
-You need to create new or use existing `GCP project` and enable `Google Cloud Translation API`
-
-How to create new project:
-https://cloud.google.com/resource-manager/docs/creating-managing-projects
