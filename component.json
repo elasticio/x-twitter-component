@@ -30,6 +30,7 @@
         "postTweet": {
             "main": "./lib/actions/postTweet.js",
             "title": "Post tweet",
+            "description": "Publish tweet",
             "metadata": {
                 "in": "./lib/schemas/postTweet.in.json",
                 "out": "./lib/schemas/postTweet.out.json"
@@ -38,6 +39,7 @@
         "searchTweets": {
             "main": "./lib/actions/searchTweets.js",
             "title": "Search tweets",
+            "description": "Search for tweets",
             "metadata": {
                 "in": "./lib/schemas/searchTweets.in.json",
                 "out": "./lib/schemas/searchTweets.out.json"
