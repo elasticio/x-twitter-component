@@ -1,8 +1,9 @@
 {
     "name": "@elasticio/twitter-component",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "elastic.io component for the Twitter API",
     "scripts": {
+        "pretest": "eslint lib verifyCredentials.js --fix",
         "test": "exit 0"
     },
     "repository": {
@@ -12,14 +13,18 @@
     "author": "elastic.io GmbH",
     "license": "BSD-2-Clause",
     "engines": {
-        "node": "8.6.0",
-        "npm": ">=5.4"
+        "node": "14"
     },
     "dependencies": {
-        "elasticio-node": "0.0.8",
-        "elasticio-sailor-nodejs": "2.2.1",
-        "twitter": "^1.7.1",
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "2.6.21",
+        "twitter": "1.7.1",
         "twitter-js-client": "0.0.5",
         "twitter-node-client": "0.0.6"
+    },
+    "devDependencies": {
+        "eslint": "7.15.0",
+        "eslint-config-airbnb-base": "14.2.1",
+        "eslint-plugin-import": "2.22.1"
     }
 }
