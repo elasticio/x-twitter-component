@@ -2,6 +2,7 @@
     "title": "Twitter",
     "description": "elastic.io component for the Twitter API",
     "docsUrl": "https://github.com/elasticio/twitter-component",
+    "buildType":"docker",
     "credentials": {
         "fields": {
             "consumer_key": {
