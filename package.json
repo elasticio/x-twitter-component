@@ -1,6 +1,5 @@
 {
     "name": "@elasticio/twitter-component",
-    "version": "0.0.2",
     "description": "elastic.io component for the Twitter API",
     "scripts": {
         "pretest": "eslint lib verifyCredentials.js --fix",

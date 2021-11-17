@@ -1,5 +1,6 @@
 {
     "title": "Twitter",
+    "version": "0.0.3",
     "description": "elastic.io component for the Twitter API",
     "docsUrl": "https://github.com/elasticio/twitter-component",
     "buildType":"docker",
