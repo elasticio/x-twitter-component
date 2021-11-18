@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "elasticio-node": "0.0.9",
-        "elasticio-sailor-nodejs": "2.6.21",
+        "elasticio-sailor-nodejs": "2.6.26",
         "twitter": "1.7.1",
         "twitter-js-client": "0.0.5",
         "twitter-node-client": "0.0.6"
