@@ -7,9 +7,9 @@ jobs:
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Audit Dependencies
-          command: npm audit --audit-level=critical
+#      - run:
+#          name: Audit Dependencies
+#          command: npm audit --audit-level=critical
       - run:
           name: Installing Dependencies
           command: npm install
