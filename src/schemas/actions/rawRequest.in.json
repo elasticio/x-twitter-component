@@ -6,11 +6,11 @@
       "required": true,
       "title": "Method",
       "enum": [
-        "get",
-        "patch",
-        "post",
-        "put",
-        "delete"
+        "GET",
+        "PATCH",
+        "POST",
+        "PUT",
+        "DELETE"
       ]
     },
     "url": {

@@ -54,25 +54,25 @@ none
 #### Input Metadata
 
 * **Url** - (string, required): Path of the resource. ex: `/2/users/me`
-* **Method** - (string, required): HTTP verb to use in the request, one of `get`, `post`, `put`, `patch`, `delete`.
-* **Request Body or Query** - (object, optional): Body of the request to send for `post`, `put`, and `patch` or query for `get` and `delete` methods
+* **Method** - (string, required): HTTP verb to use in the request, one of `GET`, `POST`, `PUT`, `PATCH`, `DELETE`.
+* **Request Body or Query** - (object, optional): Body of the request to send for `POST`, `PUT`, and `PATCH` or query for `GET` and `DELETE` methods
 <details>
   <summary>Examples</summary>
 
   #### Get logged user information with creation date using Url 
-  ![image](https://github.com/elasticio/twitter-component/assets/7985390/c01ac661-01d4-41a6-8e18-e0b2420a6fd1)
+  ![image](https://github.com/elasticio/twitter-component/assets/7985390/0bbc07d1-b5ff-4856-a6d1-b553d345e55c)
   ```json
   {
-    "method": "get",
+    "method": "GET",
     "url": "/2/users/me?user.fields=created_at"
   }
   ```
 
   #### Get logged user information with creation date using `Request Body or Query` field
-  ![image](https://github.com/elasticio/twitter-component/assets/7985390/5464f571-03cd-4d54-a974-e1b924ae6338)
+  ![image](https://github.com/elasticio/twitter-component/assets/7985390/ad3251dc-0114-4620-b55a-81f830fb5159)
   ```json
 {
-  "method": "get",
+  "method": "GET",
   "url": "/2/users/me",
   "data": {
     "user.fields": "created_at"

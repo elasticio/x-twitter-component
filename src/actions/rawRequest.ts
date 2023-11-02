@@ -14,7 +14,7 @@ export async function processAction(msg, cfg) {
     throw new Error(`Method "${method}" is not supported! Supported methods are: ${JSON.stringify(allowedMethods)}`);
   }
   try {
-    const response = await client.callHttpWrapper(method, url, data);
+    const response = await client.callHttpWrapper(method.toLowerCase(), url, data);
     this.logger.info('request is done, emitting...');
     return messages.newMessageWithBody({
       headers: response.headers,
