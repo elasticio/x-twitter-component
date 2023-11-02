@@ -1,4 +1,4 @@
-## 2.0.0 (October 31, 2023)
+## 2.0.0 (November 02, 2023)
 * Component has been fully revitalized and migrated on Twitter API v2 
 * Added `Make Raw Request` action
 * Removed `Search tweets` action (you can use `Make Raw Request` instead)
