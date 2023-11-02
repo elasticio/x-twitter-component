@@ -8,10 +8,16 @@ export async function processAction(msg: any, cfg: any) {
   client ||= new Client(this, cfg);
   client.setLogger(this.logger);
   const { text } = msg.body;
-  const { data } = await client.postTweet(text);
 
-  this.logger.info('"Post tweet" action is done, emitting...');
-  return messages.newMessageWithBody(data);
+  try {
+    const { data } = await client.postTweet(text);
+    this.logger.info('"Post tweet" action is done, emitting...');
+    return messages.newMessageWithBody(data);
+  } catch (e) {
+    const errorMessage = e.data ? `${e.message} - ${JSON.stringify(e.data)}` : e.message;
+    this.logger.error(errorMessage);
+    throw new Error(errorMessage);
+  }
 }
 
 module.exports.process = processAction;

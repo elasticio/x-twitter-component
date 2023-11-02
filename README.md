@@ -1,4 +1,4 @@
-# Twitter Component
+# X (Twitter) Component
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@
 
 ## Description
 
-Twitter Component is designed to connect with Twitter API v2
+X (Twitter) Component is designed to connect with X (Twitter) API v2
 
 ## Credentials
 
