@@ -22,7 +22,7 @@ describe('rawRequest action', () => {
     });
     it('should make get request', async () => {
       const cfg = {};
-      const msg = { body: { method: 'get', url: '/me' } };
+      const msg = { body: { method: 'GET', url: '/me' } };
       const { body } = await processAction.call(getContext(), msg, { ...cfg, ...creds });
       expect(execRequest.callCount).to.be.equal(1);
       expect(execRequest.getCall(0).args).to.be.deep.equal(['get', '/me', undefined]);
@@ -41,7 +41,7 @@ describe('rawRequest action', () => {
     });
     it('api error', async () => {
       const cfg = {};
-      const msg = { body: { method: 'get', url: '/example' } };
+      const msg = { body: { method: 'GET', url: '/example' } };
       await expect(processAction.call(getContext(), msg, { ...cfg, ...creds })).to.be.rejectedWith('StatusCodeError');
       expect(execRequest.callCount).to.be.equal(1);
       expect(execRequest.getCall(0).args).to.be.deep.equal(['get', '/example', undefined]);
