@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string",
+      "required": true,
+      "title": "Method",
+      "enum": [
+        "get",
+        "patch",
+        "post",
+        "put",
+        "delete"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "title": "URL"
+    },
+    "data": {
+      "type": "object",
+      "title": "Request Body or Query"
+    }
+  }
+}

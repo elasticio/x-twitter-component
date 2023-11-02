@@ -1,67 +1,89 @@
-# twitter-component
+# Twitter Component
 
-### Description
-Twitter component for the elastic.io platform.
+## Table of Contents
 
-### Credentials
- - Consumer key
- - Consumer secret
- - Access token key
- - Access token secret
+* [Description](#description)
+* [Credentials](#credentials)
+* [Actions](#actions) 
+  * [Post tweet](#post-tweet) 
+  * [Make Raw Request](#make-raw-request)
+* [Triggers](#triggers)
 
-### Actions
+## Description
 
-#### Post tweet
-in/out metadata can be found at `/lib/schemas/postTweet.{in/out}.json`
+Twitter Component is designed to connect with Twitter API v2
 
-##### usage example
-input message:
-```
+## Credentials
+
+To authenticate component you will need to create App in [developer portal’s App page](https://developer.twitter.com/en/portal/projects-and-apps), component use OAuth 1.0a. [more info](https://developer.twitter.com/en/docs/apps/overview)
+
+Component credentials configuration fields: 
+* **Consumer key**  (string, required) - Consumer API key
+* **Consumer secret**  (string, required) - Consumer API secret
+* **Access token key**  (string, required) - Authentication access token
+* **Access token secret**  (string, required) - Authentication access secret
+
+## Actions 
+
+### Post tweet 
+
+Post new tweet
+
+#### Configuration Fields
+
+none
+
+#### Input Metadata
+
+* **Text** - (string, required): Text of your tweet
+
+#### Output Metadata
+
+* **id** - (string, required): Unique identifier for your tweet
+* **text** - (string, required): Text of your tweet 
+* **edit_history_tweet_ids** - (array, required): list of tweet ids edit history
+  
+### Make Raw Request 
+
+Executes custom request.
+
+#### Configuration Fields
+
+none
+
+#### Input Metadata
+
+* **Url** - (string, required): Path of the resource. ex: `/2/users/me`
+* **Method** - (string, required): HTTP verb to use in the request, one of `get`, `post`, `put`, `patch`, `delete`.
+* **Request Body or Query** - (object, optional): Body of the request to send for `post`, `put`, and `patch` or query for `get` and `delete` methods
+<details>
+  <summary>Examples</summary>
+
+  #### Get logged user information with creation date using Url 
+  ![image](https://github.com/elasticio/twitter-component/assets/7985390/c01ac661-01d4-41a6-8e18-e0b2420a6fd1)
+  ```json
+  {
+    "method": "get",
+    "url": "/2/users/me?user.fields=created_at"
+  }
+  ```
+
+  #### Get logged user information with creation date using `Request Body or Query` field
+  ![image](https://github.com/elasticio/twitter-component/assets/7985390/5464f571-03cd-4d54-a974-e1b924ae6338)
+  ```json
 {
-    "text": "hi there"
+  "method": "get",
+  "url": "/2/users/me",
+  "data": {
+    "user.fields": "created_at"
+    }
 }
-```
-output message:
-```
-{
-    "text": "hi there",
-    "id": "979656103867887616",
-    "createdAt": "Fri Mar 30 09:46:30 +0000 2018"
-}
-```
-#### Search tweets
-in/out metadata can be found at `/lib/schemas/searchTweets.{in/out}.json`
+  ```
+</details>
 
-##### usage example
-input message:
-```
-{
-    "text": "hi there",
-    "count": 2
-}
-```
-output message:
-```
-{
-	"tweets": [
-		{
-            "id": "979656598619607040",
-            "userId": "123123",
-            "createdAt": "Fri Mar 30 09:48:28 +0000 2018",
-            "text": "@user123123 Hi there. If you would like to provide feedback about our packaging, please follow this link:…",
-			"lang": "en"
-		},
-		{
-            "id": "979656548753592320",
-            "userId": "456456",
-            "createdAt": "Fri Mar 30 09:48:17 +0000 2018",
-            "text": "@user456456 Hi there, what sort of information can I help you with? Are you looking at train times for today?",
-			"lang": "en",
-		}
-	]
-}
-```
+#### Output Metadata
 
-### Links
+* **headers** - (object, required): HTTP headers of the response.
+* **responseBody** - (object, optional): HTTP response body.
 
-To retrieve credentials you need to create Twitter App here https://apps.twitter.com/ and generate token in that app.
+## Triggers
