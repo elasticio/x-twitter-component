@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "headers": {
+      "type": "object",
+      "title": "HTTP headers",
+      "required": true,
+      "properties": {}
+    },
+    "responseBody": {
+      "type": "object",
+      "title": "Response Body",
+      "properties": {}
+    }
+  }
+}

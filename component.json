@@ -1,49 +1,62 @@
 {
-    "title": "Twitter",
-    "description": "elastic.io component for the Twitter API",
-    "version": "1.0.0",
-    "credentials": {
-        "fields": {
-            "consumer_key": {
-                "label": "Consumer key",
-                "required": true,
-                "viewClass": "TextFieldView"
-            },
-            "consumer_secret": {
-                "label": "Consumer secret",
-                "required": true,
-                "viewClass": "TextFieldView"
-            },
-            "access_token_key": {
-                "label": "Access token key",
-                "required": true,
-                "viewClass": "TextFieldView"
-            },
-            "access_token_secret": {
-                "label": "Access token secret",
-                "required": true,
-                "viewClass": "TextFieldView"
-            }
-        }
-    },
-    "actions": {
-        "postTweet": {
-            "main": "./lib/actions/postTweet.js",
-            "title": "Post tweet",
-            "description": "Publish tweet",
-            "metadata": {
-                "in": "./lib/schemas/postTweet.in.json",
-                "out": "./lib/schemas/postTweet.out.json"
-            }
-        },
-        "searchTweets": {
-            "main": "./lib/actions/searchTweets.js",
-            "title": "Search tweets",
-            "description": "Search for tweets",
-            "metadata": {
-                "in": "./lib/schemas/searchTweets.in.json",
-                "out": "./lib/schemas/searchTweets.out.json"
-            }
-        }
+  "title": "X (Twitter) component",
+  "description": "X (Twitter) component",
+  "version": "2.0.0",
+  "credentials": {
+    "fields": {
+      "consumer_key": {
+        "label": "Consumer key",
+        "required": true,
+        "viewClass": "TextFieldView",
+        "placeholder": "Y2fvFsuFUBvmQ6Z36XRNdp5IZ"
+      },
+      "consumer_secret": {
+        "label": "Consumer secret",
+        "required": true,
+        "viewClass": "PasswordFieldView",
+        "placeholder": "2cUxV7ntLtpPcizC7zmRvVrkNb64hc9ttAPPHdkgFj9CqWR1Sm"
+      },
+      "access_token_key": {
+        "label": "Access token key",
+        "required": true,
+        "viewClass": "TextFieldView",
+        "placeholder": "1338442486423883776-c3cjtfx75fw13l5ryX1EeuucdP2vBn"
+      },
+      "access_token_secret": {
+        "label": "Access token secret",
+        "required": true,
+        "viewClass": "PasswordFieldView",
+        "placeholder": "e7L5IephIqv76EiPKHZHiHr1taGnWzdugb4LF4bnkKD3S"
+      }
     }
+  },
+  "actions": {
+    "makeRawRequest": {
+      "main": "./src/actions/rawRequest.js",
+      "title": "Make Raw Request",
+      "help": {
+        "description": "Manually construct a request to send to the server.",
+        "link": "/components/twitter/index.html#make-raw-request"
+      },
+      "fields": {},
+      "metadata": {
+        "in": "./src/schemas/actions/rawRequest.in.json",
+        "out": "./src/schemas/actions/rawRequest.out.json"
+      }
+    },
+    "postTweet": {
+      "main": "./src/actions/postTweet.js",
+      "title": "Post tweet",
+      "help": {
+        "description": "",
+        "link": "/components/twitter/index.html#post-tweet"
+      },
+      "fields": {},
+      "metadata": {
+        "in": "./src/schemas/actions/postTweet.in.json",
+        "out": "./src/schemas/actions/postTweet.out.json"
+      }
+    }
+  },
+  "triggers": {}
 }
