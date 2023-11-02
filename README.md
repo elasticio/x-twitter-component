@@ -15,7 +15,8 @@ Twitter Component is designed to connect with Twitter API v2
 
 ## Credentials
 
-To authenticate component you will need to create App in [developer portal’s App page](https://developer.twitter.com/en/portal/projects-and-apps), component use OAuth 1.0a. [more info](https://developer.twitter.com/en/docs/apps/overview)
+To authenticate the component you will need to create an App in [developer portal’s App page](https://developer.twitter.com/en/portal/projects-and-apps), the component uses OAuth 1.0a. [more info](https://developer.twitter.com/en/docs/apps/overview)
+
 
 Component credentials configuration fields: 
 * **Consumer key**  (string, required) - Consumer API key
@@ -39,7 +40,8 @@ none
 
 #### Output Metadata
 
-* **id** - (string, required): Unique identifier for your tweet
+* **id** - (string, required): Unique identifier of your tweet
+
 * **text** - (string, required): Text of your tweet 
 * **edit_history_tweet_ids** - (array, required): list of tweet ids edit history
   
@@ -53,7 +55,8 @@ none
 
 #### Input Metadata
 
-* **Url** - (string, required): Path of the resource. ex: `/2/users/me`
+* **Url** - (string, required): Path of the resource. e.g.: `/2/users/me`
+
 * **Method** - (string, required): HTTP verb to use in the request, one of `GET`, `POST`, `PUT`, `PATCH`, `DELETE`.
 * **Request Body or Query** - (object, optional): Body of the request to send for `POST`, `PUT`, and `PATCH` or query for `GET` and `DELETE` methods
 <details>

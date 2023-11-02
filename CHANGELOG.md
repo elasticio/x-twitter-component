@@ -1,5 +1,5 @@
 ## 2.0.0 (October 31, 2023)
-* Component full revitalize to migrate on Twitter API v2 
+* Component has been fully revitalized and migrated on Twitter API v2 
 * Added `Make Raw Request` action
 * Removed `Search tweets` action (you can use `Make Raw Request` instead)
 * Changed output metadata for `Post tweet` action
