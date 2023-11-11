@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@elastic.io/component-commons-library": "3.1.5",
-    "axios": "0.27.2",
+    "axios": "1.6.0",
     "elasticio-node": "0.0.9",
     "elasticio-sailor-nodejs": "2.7.1",
     "twitter-api-v2": "1.15.2"
